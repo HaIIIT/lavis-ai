@@ -1,0 +1,28 @@
+.navbar {
+  position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,.94);
+  backdrop-filter: blur(16px); border-bottom: 1px solid rgba(226,235,228,.9);
+}
+.nav-inner { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.brand { display: flex; align-items: center; gap: 11px; text-decoration: none; min-width: 235px; }
+.brand-logo { width: 58px; height: 58px; object-fit: contain; border-radius: 12px; }
+.brand-copy { display: flex; flex-direction: column; line-height: 1.1; }
+.brand-copy strong { font-size: 1.34rem; letter-spacing: -.04em; color: var(--lavis-green-dark); }
+.brand-copy strong b { color: var(--lavis-red); }
+.brand-copy small { margin-top: 5px; font-size: .51rem; font-weight: 800; letter-spacing: .1em; color: #64786c; }
+.nav-links { display: flex; align-items: center; gap: 30px; }
+.nav-item { position: relative; text-decoration: none; color: #53675c; font-size: .84rem; font-weight: 700; transition: color .2s; }
+.nav-item:hover, .nav-item.active { color: var(--lavis-green-dark); }
+.nav-item.active::after { content: ""; position: absolute; height: 2px; border-radius: 4px; background: var(--lavis-green); bottom: -10px; left: 0; right: 0; }
+.nav-cta { min-height: 43px; padding: 0 16px; font-size: .8rem; }
+.nav-toggle { display: none; background: white; border: 1px solid var(--border-soft); border-radius: 10px; padding: 9px; color: var(--lavis-green-dark); }
+.nav-toggle svg { width: 21px; height: 21px; }
+@media(max-width: 800px) {
+  .nav-inner { min-height: 72px; }
+  .brand-logo { width: 49px; height: 49px; }
+  .brand { min-width: 0; }
+  .nav-toggle { display: inline-flex; }
+  .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; padding: 20px 22px 24px; background: white; border-bottom: 1px solid var(--border-soft); box-shadow: var(--shadow-md); align-items: stretch; flex-direction: column; gap: 20px; }
+  .nav-links.open { display: flex; }
+  .nav-item.active::after { display: none; }
+  .nav-cta { width: 100%; }
+}
